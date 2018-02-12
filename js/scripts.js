@@ -6,13 +6,28 @@ Challenge:
 Create a calendar from user input according to the guidelines provided in document.
 I wont finish this in 2.5 hours but I want to create the calendar - just to do it. 
 */
-
+var Months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 //Create a calendar object when submit is clicked
 $('.btn-submit').click(function() {
-	$('.calTemplate').show();
-	var make = new Calendar('test', 10, 'US');
-	//display calendar on webpage
-	$('#results').html(make.showCalendar());
+	
+    var make = new Calendar('test', 10, 'US');
+    //display calendar on webpage
+    $('#results').html(make.showCalendar());
+
+    //get input values
+    var date = $('#startdate').val();
+    var monthDayYear = date.split('/');
+    var month = parseInt(monthDayYear[0]);
+    console.log(month);
+
+    $('#month-name').append(Months[month - 1]);
+    
+    var daysToDisplay = $('#numberdays').val();
+    console.log(daysToDisplay);
+
+    var country = $('#countrycode').val();
+    console.log(country);
+
 	return false;
 });
 
@@ -38,7 +53,7 @@ Calendar.prototype.showCalendar = function() {
     					<th class="day-char">S</th>
     				</thead>
             <tr class="month">
-                <td class="month-name" colspan="7">January 2018</td>
+                <td id="month-name" colspan="7"></td>
             </tr>
     				<tr>
     					<td class="day-cell"></td>
