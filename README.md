@@ -1,6 +1,9 @@
 # calendar
 Continuing ProSoft Coding Challenge post 2 hours
 
+Github Pages for calendar repo:
+https://jeanieherold.github.io/calendar/
+
 Please develop a web-based application that displays a monthly calendar
 based on the requirements below. It is NOT important that you actually
 complete this exercise in the allotted time (2 hours and a half). It IS
